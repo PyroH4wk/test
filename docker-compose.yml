@@ -7,7 +7,7 @@ services:
       dockerfile: ./docker/php/Dockerfile
     container_name: php_container
     volumes:
-      - ./fileofthesite:/var/www
+      - ./app:/var/www
 
   nginx:
     image: nginx
@@ -15,7 +15,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./fileofthesite:/var/www
+      - ./app:/var/www
       - ./docker/nginx:/etc/nginx/conf.d  
 
   mysql_db:
